@@ -5,8 +5,9 @@ function App() {
   
   const [data, setData]=useState({})
   const [location, setLocation] = useState('')
+  const excludedCities = ["Dick", "Pussy"]
 
-  const url =`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=0613e98b62062d19db6176db9376bdfa&exclude=Dick,Pussy`
+  const url =`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=0613e98b62062d19db6176db9376bdfa&exclude=${excludedCities.join(',')}`
 
   const searchLocation = (event) => {
     if (event.key === 'Enter'){
